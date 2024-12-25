@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Gas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #004aad, #0073e6);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            border-bottom: 2px solid #ffcc00;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #004aad, #0073e6);
+            color: white;
+            border-bottom: 5px solid #ffcc00;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            height: 100px;           /* Set the height of the logo */
+            width: auto;            /* Maintain aspect ratio */
+            border-radius: 5px;     /* Add slight rounding to the edges */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+            margin-left: 530px; 
+            display: flex;
+            justify-content: center;
+        }
+        
+        
+        header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }        
+
+        .menu-toggle {
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            z-index: 2000;
+            margin-right: 15px;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+        }
+
+        header .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        header .auth-buttons button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #004aad;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        header .auth-buttons button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(180deg, #004aad, #003d99);
+            color: white;
+            padding: 25px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease, background-color 0.3s ease;
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(90deg, #e6f0ff, #cce5ff);
+            color: #004aad;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #004aad;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 40px 20px;
+            background: linear-gradient(90deg, #cce5ff, #b3daff);
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #004aad;
+        }
+
+        .features .feature-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .features .feature {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid #ffcc00;
+        }
+
+        .features .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .features .feature i {
+            font-size: 40px;
+            color: #004aad;
+            margin-bottom: 10px;
+        }
+
+         /* Services Section */
+          .services {
+              padding: 40px 20px;
+              background: linear-gradient(90deg, #cce5ff, #b3daff);
+              text-align: center;
+              border-top:2px solid #ffcc00;
+          }
+      
+          .services h2 {
+              font-size: 36px;
+              color: #004aad;
+              margin-bottom: 20px;
+          }
+      
+          .services .service-list {
+              display: flex;
+              justify-content: center;
+              gap: 20px;
+              flex-wrap: wrap;
+          }
+      
+          .services .service {
+              background-color: #fff;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              width: 300px;
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+              border-top: 3px solid #ffcc00;
+          }
+      
+          .services .service:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          }
+      
+          .services .service i {
+              font-size: 40px;
+              color: #004aad;
+              margin-bottom: 10px;
+          }
+      
+          /* Testimonials Section */
+          .testimonials {
+              background: linear-gradient(90deg, #f1f1f1, #e6e6e6);
+              padding: 40px 20px;
+              text-align: center;
+          }
+      
+          .testimonials h2 {
+              font-size: 36px;
+              color: #004aad;
+              margin-bottom: 20px;
+          }
+      
+          .testimonials .testimonial {
+              background-color: #fff;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              margin: 10px auto;
+              max-width: 600px;
+              border-left: 5px solid #004aad;
+              border-right: 5px solid #ffcc00;
+          }
+      
+          .testimonials .testimonial p {
+              font-style: italic;
+              margin-bottom: 10px;
+              color: #333;
+          }
+      
+          .testimonials .testimonial h3 {
+              margin: 0;
+              font-weight: bold;
+              color: #004aad;
+          }
+      
+        /* Footer */
+        footer {
+            background-color: #004aad;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <i class="fas fa-bars menu-toggle" onclick="toggleSidebar()"></i>
+        <div class="logo">Bharat Gas</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="#">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='sign-in.html';">Sign In</button>
+            <button>New User</button>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <h3>LPG Services</h3>
+        <ul>
+            <li><a href="#">New Connection</a></li>
+            <li><a href="#">Refill Booking</a></li>
+            <li><a href="#">Transfer Connection</a></li>
+            <li><a href="#">Update Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero">
+        <div class="header-content">
+            <img src="bglogo.png" alt="Bharat Gas Logo" class="logo-img">
+        </div>
+        <h1>Welcome to Bharat Gas</h1>
+        <p>Efficient. Reliable. Trusted.</p>
+        <button onclick="window.location.href='book-now.html';">Book Now</button>
+
+    </section>
+
+    <section class="features">
+        <h2>Why Choose Bharat Gas?</h2>
+        <div class="feature-list">
+            <div class="feature">
+                <i class="fas fa-gas-pump"></i>
+                <h3>Easy Gas Booking</h3>
+                <p>Book your LPG refill anytime, anywhere with ease.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>Get your LPG delivered to your doorstep quickly.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-users"></i>
+                <h3>Customer Support</h3>
+                <p>We’re here to help with any questions or concerns.</p>
+            </div>
+        </div>
+    </section>
+   
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-list">
+          <div class="service">
+              <i class="fas fa-heartbeat"></i>
+              <h3>Arogya Setu</h3>
+              <p>Stay connected and stay safe with health monitoring services.</p>
+          </div>
+          <div class="service">
+              <i class="fas fa-file-alt"></i>
+              <h3>Register New Connection</h3>
+              <p>Start your journey with Bharat Gas by registering a new connection.</p>
+          </div>
+          <div class="service">
+              <i class="fas fa-phone"></i>
+              <h3>Update Contact Details</h3>
+              <p>Keep your contact information up to date for seamless service.</p>
+          </div>
+      </div>
+  </section>
+  
+  <section class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial">
+          <p>"Bharat Gas has made my life so much easier with their quick delivery and excellent service."</p>
+          <h3>- Ramesh K.</h3>
+      </div>
+      <div class="testimonial">
+          <p>"The online booking process is seamless and user-friendly. Highly recommended!"</p>
+          <h3>- Priya S.</h3>
+      </div>
+  </section>
+  
+
+    <footer>
+        <p>&copy; 2024 Bharat Gas. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

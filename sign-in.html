@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Bharatgas</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #004aad;
+            color: #ffcc00;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        header img {
+            position:absolute;
+            top: 10px;
+            left: 10px;
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+            margin-left: 520px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+            padding: 20px;
+        }
+
+        .sign-in-container {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            background: linear-gradient(90deg, #cce5ff, #b3daff);
+            margin-top: -140px;
+        }
+
+        h1 {
+            color: #004aad;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #004aad;
+            color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00337a;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            color: #004aad;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #004aad;
+            color: #ffcc00;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="bglogo.png" alt="Bharatgas Logo">
+        <h1>Sign In</h1>
+    </header>
+
+    <main>
+        <div class="sign-in-container">
+            <h1>Welcome Back</h1>
+            <form>
+                <input type="text" placeholder="User ID" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bharatgas. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

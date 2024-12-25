@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Cylinder</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <style>
+      /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  background: linear-gradient(90deg, #e2eefa, #cce4fa);
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* Header */
+.fixed-header {
+  background: linear-gradient(90deg, #004aad, #0073e6);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-logo {
+  height: 50px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Main Section */
+main {
+  margin-top: 80px; /* Adjust for fixed header */
+  padding: 20px;
+}
+
+/* Customer Details */
+.customer-details {
+  background: linear-gradient(90deg, #bfdcfc, #a2cffa);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+ 
+}
+
+.input-section {
+  grid-column: 1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.digit-input {
+  display: inline-block;
+  gap: 5px;
+}
+
+.digit-input input {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: 0.2s;
+  margin-right: 2px;
+}
+
+.digit-input input:focus {
+  outline: none;
+  border-color: #0073e6;
+  box-shadow: 0 0 5px #0073e6;
+}
+
+.or-button {
+  background-color: #f9c823;
+  color: #004aad;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Delivery Date */
+.delivery-date {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: -160px;
+}
+
+.daate{
+  margin-left: -160px;
+}
+
+#date-picker {
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: -160px;
+}
+
+#date-picker:focus {
+  outline: none;
+  border-color: #0073e6;
+  box-shadow: 0 0 5px #0073e6;
+}
+
+/* Place Order Button */
+.place-order {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#place-order-btn {
+  background-color: #004aad;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#place-order-btn:hover {
+  background-color: #003f91;
+}
+
+/* Booking Instructions */
+.booking-instructions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.instructions-card {
+  background: linear-gradient(90deg, #edd340, #edbc2c);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.instructions-card p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.instructions-card strong {
+  color: #004aad;
+  font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="header-container">
+            <img src="bglogo.png" alt="Bharat Gas Logo" class="brand-logo">
+            <h1 class="brand-name">Bharat Gas</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Customer Details Section -->
+        <section class="customer-details">
+            <h2>Customer Details</h2>
+            <div class="input-section">
+                <div>
+                    <label for="phone-number">Phone Number:</label>
+                    <div id="phone-number" class="digit-input">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                    </div>
+                </div>
+
+                <div class="or-section">
+                    <button class="or-button">OR</button>
+                </div>
+
+                <div>
+                    <label for="lpg-id">LPG ID:</label>
+                    <div id="lpg-id" class="digit-input">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                        <input type="text" maxlength="1" pattern="[0-9]*" oninput="moveToNext(this)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferred Delivery Date -->
+            <div class="delivery-date">
+                <label for="date-picker" class="daate">Preferred Delivery Date:</label>
+                <input type="date" id="date-picker" placeholder="Select Delivery Date" min="">
+            </div>
+            <!-- Place Order Button -->
+        <div class="place-order">
+          <button id="place-order-btn">Place Order</button>
+      </div>
+        </section>
+
+        
+
+        <!-- Booking Instructions -->
+        <section class="booking-instructions">
+            <h2>Book Through SMS</h2>
+            <div class="instructions-card">
+                <p>
+                    <strong>To book a cylinder via SMS:</strong><br>
+                    Send <strong>'BOOK'</strong> to <strong>9876543210</strong>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function moveToNext(input) {
+            if (input.value.length === input.maxLength) {
+                let next = input.nextElementSibling;
+                while (next && next.tagName !== "INPUT") {
+                    next = next.nextElementSibling;
+                }
+                if (next) next.focus();
+            }
+        }
+    </script>
+</body>
+</html>
